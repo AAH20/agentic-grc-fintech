@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic-grc-fintech"
+version = "1.0.0"
+description = "Autonomous Multi-Cloud GRC & Regulatory Exam OS for FinTech beyond PCI DSS (DORA, ISO 42001, SEC 96h, FFIEC)"
+authors = [{ name = "Ahmed Hassan", email = "aah20@users.noreply.github.com" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+agentic-grc = "agentic_grc_fintech.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["agentic_grc_fintech*"]
