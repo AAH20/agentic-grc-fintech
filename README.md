@@ -2,7 +2,7 @@
 
 > **Autonomous Multi-Cloud GRC & Regulatory Exam OS for FinTech (Beyond PCI DSS)**  
 > *Continuous EU DORA Third-Party Risk, ISO 42001 Agent Governance, SEC 96h Materiality & FFIEC BaaS Oversight*  
-> Direct Integration with **[a2zsoc.com](https://a2zsoc.com)** 867-Control Lattice & Evidence Vault  
+> Local cryptographic (SHA-256) sealing to an in-process 867-Control Lattice model — live **[a2zsoc.com](https://a2zsoc.com)** Evidence Vault integration is roadmap  
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-brightgreen.svg)](https://python.org)
@@ -10,7 +10,7 @@
 [![ISO 42001](https://img.shields.io/badge/ISO%2FIEC%2042001-AI%20Governance%20Passed-purple.svg)]()
 [![SEC 96h](https://img.shields.io/badge/SEC%208--K-Item%201.05%2096h%20Automated-orange.svg)]()
 [![FFIEC CAT](https://img.shields.io/badge/FFIEC%20CAT-BaaS%20Continuous%20Parity-green.svg)]()
-[![a2zsoc](https://img.shields.io/badge/a2zsoc.com-867%20Controls%20Sealed-blue.svg)](https://a2zsoc.com)
+[![a2zsoc](https://img.shields.io/badge/a2zsoc.com-867--Control%20Local%20Seal-blue.svg)](https://a2zsoc.com)
 [![Tests](https://img.shields.io/badge/Tests-6%2F6%20Passing-success.svg)]()
 
 ---
@@ -23,7 +23,7 @@ Financial institutions and high-growth FinTechs spend millions annually paying a
 3. **SEC Form 8-K Item 1.05 & Regulation S-P (96-Hour Clock)**: Public entities and broker-dealers must disclose material cybersecurity incidents within **4 business days (96 hours)** of determining materiality. Correlating blast radius across 10,000 microservices takes human SOC teams 3 to 6 weeks.
 4. **FFIEC CAT & FDIC Part 370 BaaS Supervision**: Following the Synapse/Evolve crisis, sponsor banks face strict regulatory liability. Annual SOC 2 reports are rejected; banks require programmatic, continuous proof of zero omnibus FBO ledger drift and automated deposit insurance qualification.
 
-**`agentic-grc-fintech`** eliminates audit theater by replacing manual human questionnaires with automated multi-cloud telemetry, programmatic control crosswalks, algorithmic materiality quantification, and tamper-proof cryptographic sealing to **[a2zsoc.com](https://a2zsoc.com)**.
+**`agentic-grc-fintech`** eliminates audit theater by replacing manual human questionnaires with automated evaluation of supplied multi-cloud telemetry, deterministic control crosswalks, algorithmic materiality quantification, and tamper-evident local cryptographic (SHA-256) sealing. Live evidence-vault anchoring to **[a2zsoc.com](https://a2zsoc.com)** is roadmap.
 
 ---
 
@@ -54,9 +54,9 @@ flowchart TD
         DORA & AIGov & SEC & FFIEC --> Bridge
     end
 
-    subgraph SupervisoryVault["4. Immutable Cryptographic Evidence Vault"]
-        Vault["a2zsoc.com Evidence Vault API<br/>(RFC 3161 Hardware Timestamping)"]
-        Regulators["Regulator Read-Only Cockpit<br/>(Instant OCC, FDIC, CFPB, ECB Examination Dockets)"]
+    subgraph SupervisoryVault["4. Cryptographic Seal (Local)"]
+        Vault["In-Process SHA-256 Merkle Seal<br/>(a2zsoc.com Evidence Vault API, RFC 3161 timestamping: roadmap)"]
+        Regulators["Regulator Read-Only Cockpit<br/>(OCC/FDIC/CFPB/ECB dockets — roadmap, not implemented)"]
 
         Bridge --> Vault
         Vault --> Regulators
@@ -86,11 +86,13 @@ OPEN-SOURCE CORE (Apache 2.0 / MIT)         ENTERPRISE COMMERCIAL LAYER (Closed-
 • ISO42001AgentGovernor local rule engine   • Real-time LLM red-teaming & continuous demographic parity
 • SECMaterialityQuantifier exposure math   • Direct General Counsel Form 8-K automated submission queue
 • FFIECBaaSAttestor local verification     • Continuous multi-bank omnibus FBO live telemetry streaming
-• Unified A2ZSOCMasterGRCBridge client     • Direct integration with a2zsoc.com Enterprise Evidence Vault
+• Unified A2ZSOCMasterGRCBridge aggregator • (roadmap) Direct integration with a2zsoc.com Enterprise Evidence Vault
 ====================================================================================================
 ```
 
 ### Commercial Pricing & Retainer Framework
+
+> **The Enterprise Commercial Layer column above is roadmap and is not part of this open-source repository.** None of it is implemented in this codebase: there is no EBA/ESMA regulatory filing gateway, no live LLM red-teaming harness, no Form 8-K automated submission queue, no live multi-bank FBO telemetry streaming, and no a2zsoc.com Evidence Vault integration. What *is* implemented is the Open-Source Core column — local rule/math engines plus an in-process SHA-256 seal.
 * **Growth FinTech Retainer**: **$6,500 / month** ($78k/year) covering continuous SOC 2, ISO 27001, and DORA.
 * **Enterprise Sponsor Bank & Scheme Enclave**: **$20,000 / month** ($240k/year) with FFIEC CAT & FDIC 370 continuous monitoring.
 * **Institutional Sovereign Retainer**: **$40,000 / month** ($480k/year) with SEC 96h Materiality & ISO 42001 Agent Governance.
@@ -99,23 +101,23 @@ OPEN-SOURCE CORE (Apache 2.0 / MIT)         ENTERPRISE COMMERCIAL LAYER (Closed-
 
 ## 📊 Frontier Evolution, Evaluation & Benchmarks
 
-Continuously benchmarked against **`agentic-conformance-eval`** using September 2026 models (**Claude Opus 5.5**, **GPT-6 Astra**, **GPT-6 Sol**, **DeepSeek V4.1-Flash**):
+> **No benchmark harness is included in this repository.** The code ships no timing/profiling harness, no `agentic-conformance-eval` runner, and no model integration. The figures below are **design targets only** and have **not been measured** here; building a conformance harness and running it against frontier models is roadmap work.
 
-| Benchmark Metric | Measurement Protocol | Target Specification | Conformance Verdict |
+| Benchmark Metric | Measurement Protocol | Target Specification | Status |
 | :--- | :--- | :--- | :--- |
-| **DORA Annex I Register Speed** | Full Supply-Chain XML Hash | **< 50 ms Generation** | **PASSED (0.4ms)** |
-| **ISO 42001 Agent Audit Latency** | Runtime Non-Repudiation Check | **< 1.0 ms per tool call** | **PASSED (0.02ms)** |
-| **SEC Materiality Calculation** | Multi-Variable Blast Radius | **< 10 ms Determination** | **PASSED (0.01ms)** |
-| **BaaS Parity Verification Delta** | Continuous FBO Crosswalk | **$\Delta = \$0.00$ Invariant** | **PASSED (Zero Drift)** |
-| **867-Control Merkle Sealing** | a2zsoc.com Vault Ingestion | **< 5 ms Proof Commit** | **PASSED (0.12ms)** |
+| **DORA Annex I Register Speed** | Full Supply-Chain XML Hash | **< 50 ms Generation** | Target — not measured |
+| **ISO 42001 Agent Audit Latency** | Runtime Non-Repudiation Check | **< 1.0 ms per tool call** | Target — not measured |
+| **SEC Materiality Calculation** | Multi-Variable Blast Radius | **< 10 ms Determination** | Target — not measured |
+| **BaaS Parity Verification Delta** | Continuous FBO Crosswalk | **$\Delta = \$0.00$ Invariant** | Target — not measured |
+| **867-Control Merkle Sealing** | a2zsoc.com Vault Ingestion | **< 5 ms Proof Commit** | Target — not measured |
 
 ---
 
 ## 🚀 Quickstart & Verification
 
 ```bash
-# Clone and enter directory
-cd projects/agentic_grc_fintech
+# Clone and enter the repository root
+cd agentic-grc-fintech
 
 # Run unit tests (6 passing tests)
 PYTHONPATH=. python3 -m unittest discover -s tests
